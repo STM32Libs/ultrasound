@@ -23,7 +23,7 @@ void ultrasound::attach(Callback<void(uint32_t dist_cm)> func)
 }
 
 
-void ultrasound::send_echo()
+void ultrasound::trigger()
 {
 	trigger_out = 1;
 	wait_us(9);//9 gets you 10.13

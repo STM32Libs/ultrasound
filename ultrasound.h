@@ -8,7 +8,7 @@ class ultrasound
 public:
     ultrasound(PinName Trigger,PinName Echo);
 
-    void send_echo();
+    void trigger();
     void attach(Callback<void(uint32_t dist_cm)> func);
 
 private:
