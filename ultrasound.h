@@ -9,17 +9,17 @@ public:
     ultrasound(PinName Trigger,PinName Echo);
 
     void send_echo();
-    void attach(Callback<void(uint32_t data)> func);
+    void attach(Callback<void(uint32_t dist_cm)> func);
 
 private:
     static void do_nothing(uint32_t param);
     void start_measure();
     void stop_measure();
-    Callback<void(uint32_t data)> echo_back;
+    Callback<void(uint32_t dist_cm)> echo_back;
 
 public:
-    DigitalOut echo;
-    InterruptIn trigger;
+    DigitalOut trigger_out;
+    InterruptIn echo_in;
     Timer t;
 };
 
